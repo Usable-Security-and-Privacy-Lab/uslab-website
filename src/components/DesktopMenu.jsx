@@ -23,7 +23,7 @@ const MenuBar = ({ prefix, items, currentPath }) => {
               prefix={prefix}
               item={item}
               currentPath={currentPath}
-              key={index}
+              index={index}
             />
           );
         })}
@@ -32,10 +32,10 @@ const MenuBar = ({ prefix, items, currentPath }) => {
   );
 };
 
-const Menu = ({ prefix, item, currentPath, key, active, activate }) => {
+const Menu = ({ prefix, item, currentPath, index }) => {
   if (currentPath === item.url) {
     return (
-      <div key={key} className="h-12 flex flex-col justify-center">
+      <div key={index} className="h-12 flex flex-col justify-center">
         <span
           className="font-gothic  text-lg mt-0  text-sky-600"
           href={prefix + item.url}
@@ -46,7 +46,7 @@ const Menu = ({ prefix, item, currentPath, key, active, activate }) => {
     );
   } else {
     return (
-      <div className="h-12 flex flex-col justify-center">
+      <div key={index} className="h-12 flex flex-col justify-center">
         <a
           className="no-underline font-gothic text-lg mt-0 hover:underline text-default hover:text-sky-500"
           href={prefix + item.url}
