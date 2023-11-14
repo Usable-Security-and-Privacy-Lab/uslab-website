@@ -1,0 +1,9 @@
+---
+import Burger from "./Burger.jsx";
+import Header from "./Header.jsx";
+const { prefix, items } = Astro.props;
+---
+
+<nav class="flex justify-between">
+  <Burger prefix={prefix} items={items} client:load />
+</nav>

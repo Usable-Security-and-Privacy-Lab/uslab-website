@@ -1,0 +1,104 @@
+---
+import "../assets/base.css";
+import DesktopMenu from "../components/DesktopMenu.jsx";
+import MobileMenu from "../components/MobileMenu.jsx";
+
+const items = [
+  {
+    title: "Home",
+    url: "/",
+  },
+  {
+    title: "Papers",
+    url: "/papers",
+  },
+  {
+    title: "People",
+    url: "/people",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Arvo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} /><title>
+      Daniel Zappala
+    </title></head
+  >
+
+  <body class="mx-0">
+    <header class="sticky top-0">
+      <div class="flex justify-center py-2 mb-0 bg-black text-white">
+        <MobileMenu
+          prefix=""
+          items={items}
+          currentPath={Astro.url.pathname}
+          client:load
+        />
+        <div class="">
+          <a
+            class="text-white hover:text-white no-underline hover:no-underline"
+            href="https://byu.edu">Brigham Young University</a
+          >
+        </div>
+        <div class="ml-5 flex flex-col justify-center">&bull;</div>
+        <div class="ml-5">
+          <a
+            class="text-white hover:text-white no-underline hover:no-underline"
+            href="https://cs.byu.edu">Computer Science</a
+          >
+        </div>
+      </div>
+      <div
+        class="flex justify-center w-full py-2 mt-0 ml-auto mr-auto bg-white"
+      >
+        <img class="pr-5 h-20" src="/images/logo-small.png" />
+        <div
+          class="flex flex-col justify-center text-3xl font-bold font-gothic text-gray-800 uppercase"
+        >
+          Usable Security and Privacy Lab
+        </div>
+      </div>
+      <DesktopMenu prefix="" items={items} currentPath={Astro.url.pathname} />
+    </header>
+
+    <div
+      class="bg-blue-50 px-5 py-5 lg:px-[75px] md:ml-auto md:mr-auto max-w-5xl"
+    >
+      <slot class="font-gothic" />
+    </div>
+  </body>
+</html>
