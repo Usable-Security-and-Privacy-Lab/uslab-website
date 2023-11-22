@@ -1,0 +1,4 @@
+[[redirects]]
+from = "https://internet.byu.edu/*"
+to = "https://uslab.byu.edu/:splat"
+status = 301
