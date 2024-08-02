@@ -7,7 +7,7 @@ const MobileMenu = (props) => {
   return (
     <div>
       <div
-        className="flex lg:hidden justify-around flex-nowrap flex-col w-6 h-6 absolute top-2 left-3 z-20"
+        className="flex lg:hidden justify-around flex-nowrap flex-col w-6 h-6 ml-2 mr-2 absolute top-2 left-0 "
         onClick={() => setOpen(!open)}
       >
         <div

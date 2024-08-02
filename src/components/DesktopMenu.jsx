@@ -15,7 +15,7 @@ const DesktopMenu = (props) => {
 
 const MenuBar = ({ prefix, items, currentPath }) => {
   return (
-    <div className="flex justify-center border-b border-gray-300 w-full bg-white">
+    <div className="hidden lg:flex justify-center border-b border-gray-300 w-full bg-white">
       <div className="flex flex-nowrap  justify-between w-1/2 flex-row bg-white  p-0 px-10 mb-0">
         {items.map((item, index) => {
           return (
