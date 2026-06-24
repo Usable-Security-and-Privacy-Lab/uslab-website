@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@theme {
+  --color-gold: #ffde5a;
+  --color-pred: #ff3130;
+  --color-teal: #5de1e6;
+}
+
+@layer base {
+  body {
+    @apply leading-6;
+    @apply mb-10;
+  }
+  h1 {
+    @apply text-3xl;
+    @apply mt-10;
+  }
+
+  h2 {
+    @apply text-xl;
+    @apply mt-10;
+  }
+
+  h3 {
+    @apply after:content-['\0020\2015'];
+    @apply before:content-['\2015\0020'];
+    @apply mt-10;
+  }
+
+  p {
+    @apply mt-5;
+  }
+
+  ul {
+    @apply mt-3;
+  }
+
+  li {
+    @apply list-disc;
+    @apply ml-10;
+    @apply mt-1;
+  }
+  a {
+    @apply underline;
+    @apply text-sky-500;
+    /* @apply hover:text-red;*/
+  }
+
+  a.button {
+    background-color: #ff3130;
+    padding: 14px 25px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
+  }
+
+  a.button:hover {
+    background-color: #f71111;
+  }
+
+  a.button p {
+    padding: 0;
+    margin: 0;
+  }
+}
